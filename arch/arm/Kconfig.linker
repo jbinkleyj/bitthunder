@@ -70,7 +70,7 @@ config LINKER_SECTION_FLASH
 	default n
 
 config LINKER_FLASH_START_ADDRESS
-    hex "Flash begin address" if !LINKER_MEMORY_DEFINED
+    hex "Flash start address (physical)" if !LINKER_MEMORY_DEFINED
 	default MACH_FLASH_START if LINKER_MEMORY_DEFINED
 	default 0x0
 	depends on LINKER_SECTION_FLASH
@@ -88,7 +88,7 @@ config LINKER_SECTION_SRAM
 	default n
 
 config LINKER_SRAM_START_ADDRESS
-    hex "SRAM begin address" if !LINKER_MEMORY_DEFINED
+    hex "SRAM begin address (physical)" if !LINKER_MEMORY_DEFINED
 	default MACH_SRAM_START if LINKER_MEMORY_DEFINED
 	default 0x0
 	depends on LINKER_SECTION_SRAM
@@ -105,7 +105,7 @@ config LINKER_SECTION_RAM
 	default n
 
 config LINKER_RAM_START_ADDRESS
-    hex "RAM start address" if !LINKER_MEMORY_DEFINED
+    hex "RAM start address (physical)" if !LINKER_MEMORY_DEFINED
 	default MACH_RAM_START if LINKER_MEMORY_DEFINED
 	default 0x0
 	depends on LINKER_SECTION_RAM
@@ -212,5 +212,3 @@ config LINKER_IRQ_STACK_SIZE
 	hex "IRQ Stack Size" if!LINKER_MEMORY_DEFINED
 	default 0x0 if!ARCH_ARM_IRQ_STACK
 	default 0x100
-
-
