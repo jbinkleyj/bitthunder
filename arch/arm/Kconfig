@@ -140,7 +140,6 @@ config SUBARCH
 	default "zynq"	  if MACH_ZYNQ
 endif
 
-
-menu "Linking"
+menu "Memory"
     source arch/arm/Kconfig.linker
 endmenu
