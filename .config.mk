@@ -23,6 +23,7 @@ include $(BASE)$(BSP_DIR)/objects.mk
 
 $(OBJECTS): CFLAGS += -Wall -I $(BASE)/lib/include/ -I $(BASE)/arch/arm/include/
 $(OBJECTS): CFLAGS += $(shell echo $(BT_CONFIG_TOOLCHAIN_DEBUG_FLAGS))
+$(OBJECTS): CFLAGS += -march=$(shell echo $(BT_CONFIG_ARCH_ARM_FAMILY))
 $(OBJECTS): CFLAGS += -mcpu=$(shell echo $(BT_CONFIG_TOOLCHAIN_CPU)) $(shell echo $(BT_CONFIG_TOOLCHAIN_FLAGS)) $(shell echo $(BT_CONFIG_TOOLCHAIN_OPTIMISATION))
 $(OBJECTS): CFLAGS += $(shell echo $(BT_CONFIG_TOOLCHAIN_MACH_FLAGS))
 
